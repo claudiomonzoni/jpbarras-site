@@ -1,0 +1,19 @@
+---
+export interface props {
+  encabezado: string;
+  parrafo: string;
+  imagenurl: string;
+}
+
+const { encabezado, parrafo, imagenurl } = Astro.props;
+---
+
+<section id="hero">
+  <div id="izq">
+    <h1>{encabezado}</h1>
+    <p>{parrafo}</p>
+  </div>
+  <div class="der">
+    <img src={imagenurl} alt={encabezado}>
+  </div>
+</section>
