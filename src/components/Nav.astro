@@ -9,7 +9,12 @@
 ---
 
 <nav>
-  <img src="jpbarras-logo.svg" alt="JPBarras electricite in Crans Montana" />
+  <button class="menu-toggle">Menu</button>
+  <img
+    src="jpbarras-logo.svg"
+    alt="JPBarras electricite in Crans Montana"
+    id="logo"
+  />
   <ul>
     <li><a href="#">Électricité</a></li>
     <li><a href="#">Électroménager</a></li>
@@ -24,21 +29,102 @@
 </nav>
 
 <style lang="scss">
-	@import "../estilos/_variables.scss";
+  @import "../estilos/_variables.scss";
   nav {
     display: flex;
     justify-content: space-between;
     margin: 1.5rem 0;
+    
+    @include cel {
+      flex-direction: column;
+    }
     ul {
       display: inherit;
-	  align-items: center;
+      align-items: center;
+      @include cel{
+        flex-direction: column;
+        padding-bottom: 2rem;
+      }
       li {
-        padding: 0 .7rem;
-		@include hd{
-			padding: 0 1rem;
-		}
-		
+        padding: 0 0.7rem;
+        @include hd {
+          padding: 0 1rem;
+        }
+      }
+    }
+    #logo{
+      @include cel {
+        width: 16rem;
+        padding-bottom: 3rem;
       }
     }
   }
+
+  .menu-toggle {
+  position: fixed;
+
+  display: none;
+  @include cel {
+    display: block;
+    z-index: 99000;
+  }
+  right: 4vh;
+  top: 4.6vh;
+  z-index: 520;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border-top: 4px solid;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 4px solid;
+  color: $verde;
+  font-size: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.menu-toggle:before,
+.menu-toggle:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  -o-transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+button.is-active {
+  border-color: transparent;
+  border-left: none;
+}
+button.is-active:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+button.is-active:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+}
+
+
 </style>

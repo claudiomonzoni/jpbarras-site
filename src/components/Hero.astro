@@ -9,11 +9,81 @@ const { encabezado, parrafo, imagenurl } = Astro.props;
 ---
 
 <section id="hero">
-  <div id="izq">
-    <h1>{encabezado}</h1>
-    <p>{parrafo}</p>
+  <div class="izq">
+    <div class="bandeja">
+      <h1 set:html={encabezado} />
+      <p set:html={parrafo} />
+    </div>
   </div>
   <div class="der">
-    <img src={imagenurl} alt={encabezado}>
+    <img src={imagenurl} alt={encabezado} />
   </div>
 </section>
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+
+  #hero {
+    display: grid;
+    grid-template-columns: 1fr 10% 1fr;
+    grid-template-rows: 10% 1fr 10%;
+    @include cel{
+      grid-template-rows: 1fr 1fr .3fr;
+
+    }
+    .izq {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $verde;
+      padding-right: 20%;
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+      @include cel{
+        grid-column: 1 / -1;
+        grid-row: 1 / span 1;
+        padding: 15% 0;
+
+        }
+      h1 {
+        font-weight: bold;
+        color: #fff;
+        .reset {
+          font-weight: normal;
+          color: $negro;
+        }
+      }
+      .bandeja {
+        width: 70%;
+      }
+    }
+    .der {
+      grid-column: 2 / span 2;
+      grid-row: 2 / -1;
+      padding: 2rem;
+      background: $negro;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 10%,
+        $negro 10%,
+        $negro 100%
+        );
+        @include cel{
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0) 15%,
+            $negro 15%,
+            $negro 100%
+            );
+        }
+        @include cel{
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+      }
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+</style>
