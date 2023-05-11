@@ -30,6 +30,39 @@
 
 <style lang="scss">
   @import "../estilos/_variables.scss";
+
+
+   // animacion menu
+   @keyframes menuAbierto {
+   from{
+      height:5rem;
+    }
+    to {
+      height: 60vh;
+    }
+  }
+  @keyframes menuCerrado {
+    from {
+      height: 60vh;
+    }
+    to {
+      height: 5rem;
+    }
+  }
+  
+  .menuFullAbierto {
+    animation: menuAbierto 1.2s ease forwards;
+    ul {
+      display: block;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  .desanimaMenu {
+    animation: menuCerrado 1s ease backwards ;
+  }
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -37,6 +70,8 @@
     
     @include cel {
       flex-direction: column;
+      overflow-y: hidden;
+        height: 5rem;
     }
     ul {
       display: inherit;
@@ -60,6 +95,8 @@
     }
   }
 
+  
+
   .menu-toggle {
   position: fixed;
 
@@ -68,8 +105,8 @@
     display: block;
     z-index: 99000;
   }
-  right: 4vh;
-  top: 4.6vh;
+  right: 5vh;
+  top: 5.4vh;
   z-index: 520;
   width: 30px;
   height: 22px;
