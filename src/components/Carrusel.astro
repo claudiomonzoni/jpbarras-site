@@ -1,0 +1,39 @@
+---
+import Glide from "@glidejs/glide";
+import { Controls } from "@glidejs/glide/dist/glide.modular.esm";
+---
+
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <img src="carrusel-home-jpbarras-1.webp" alt="JPBarras Crans montana" />
+      <img src="carrusel-home-jpbarras-2.webp" alt="JPBarras Crans montana" />
+      <img src="carrusel-home-jpbarras-3.webp" alt="JPBarras Crans montana" />
+    </ul>
+  </div>
+</div>
+
+<style lang="scss">
+    @import "../estilos/_variables.scss";
+  @import "@glidejs/glide/src/assets/sass/glide.core";
+
+.glide{
+    height: 100%;
+}
+.glide__track {
+    height: 100%;
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;  
+        @include cel{
+            height: 47vh;
+        }
+    }
+  }
+</style>
+
+<script>
+  import { carru } from "../js/glide";
+  carru();
+</script>

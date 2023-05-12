@@ -78,10 +78,26 @@
       align-items: center;
       @include cel{
         flex-direction: column;
-        padding-bottom: 2rem;
+        &:last-child{
+        padding-top: 1rem;
+        border-top: solid 1px $verde;
+        display: flex;
+        justify-content: center;
+        flex-direction:row;
+        li{
+          padding: 0 1rem;
+        }
+      }
       }
       li {
         padding: 0 0.7rem;
+        @include cel{
+          text-align: center;
+          padding: .3rem 0;
+          a{
+            font-size: 1.5rem;
+          }
+        }
         @include hd {
           padding: 0 1rem;
         }

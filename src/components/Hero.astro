@@ -6,6 +6,7 @@ export interface props {
 }
 
 const { encabezado, parrafo, imagenurl } = Astro.props;
+import Carrusel from "../components/Carrusel.astro"
 ---
 
 <section id="hero">
@@ -16,7 +17,9 @@ const { encabezado, parrafo, imagenurl } = Astro.props;
     </div>
   </div>
   <div class="der">
-    <img src={imagenurl} alt={encabezado} />
+    <!-- <img src={imagenurl} alt={encabezado} /> -->
+    <Carrusel></Carrusel>
+    
   </div>
 </section>
 <style lang="scss">
@@ -60,6 +63,8 @@ const { encabezado, parrafo, imagenurl } = Astro.props;
       grid-column: 2 / span 2;
       grid-row: 2 / -1;
       padding: 2rem;
+      position: relative;
+      height: 100%;
       background: $negro;
       background: linear-gradient(
         90deg,
