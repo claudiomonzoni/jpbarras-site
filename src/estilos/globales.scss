@@ -46,6 +46,10 @@ h2 {
   font-weight: bold;
   color: $verde;
 }
+h3{
+  font-size: clamp(1.3em, 1.5vw, 20vw);
+  font-weight: bold;
+}
 
 ol,
 ul {
@@ -82,5 +86,17 @@ a {
   
     @include hdplus{
       width: min(100% - 5rem, 90rem);
+    }
+  }
+
+  .cta{
+    background: $naranja;
+    border-radius: .5rem;
+    padding: .3rem 1rem;
+    font-weight: bold;
+    color: #fff;
+    &:hover{
+      background: #fff;
+      color: $naranja;
     }
   }

@@ -2,7 +2,7 @@ $verde: #86b91e;
 $azul: #7a9bb6;
 $naranja: #ff6b02;
 $negro: #1a171b;
-
+$beige: #EEE8D4;
 // fuente monserrat y roboto para los head
 
 //media query
@@ -55,4 +55,5 @@ $hdplus: 1990px;
 
 //extra
 $margen: 2rem;
-$margen-top: 4rem;
+$margen-abajo: 4rem;
+$margen-riel: calc((100% - (100% - 5rem)) / 2 );
