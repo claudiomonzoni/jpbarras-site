@@ -1,0 +1,88 @@
+---
+---
+
+<footer>
+  <div class="izq">
+    <img
+      src="jpbarras-logo-ompleto-footer.svg"
+      alt="JP Barrass Electricité SA, Shop in Crans"
+    />
+  </div>
+  <div class="der">
+    <div>
+
+      <a href="tel:0274813956" class="tel">027 481 39 56</a>
+      <ul>
+        <li>
+          <img src="icon-email.svg" alt="email J.P. Barras" /><a
+          href="email:shopincrans@jpbarras.ch"></a>shopincrans@jpbarras.ch
+        </li>
+        <li>
+          <img src="icon-marker.svg" alt="J.P. Barras location" /><a href="#"
+          >Grand-Place 7 - Crans-Montana</a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <img src="icon-facebook.svg" alt="facebook">
+          <img src="icon-instagram.svg" alt="instagram">
+          <h4>Suivez-nous</h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<style lang="scss">
+@import "../estilos/_variables.scss";  
+
+footer{
+  display: flex;
+  height: 25vw;
+  @include hdplus{
+    height: 18vw;
+  }
+  @include cel{
+    flex-wrap: wrap;
+    .izq, .der{
+      flex: 1 0 100%;
+      padding: 8vh 4rem;
+    }
+  }
+}
+.izq{
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 50%;
+  background:$negro;
+}
+.der{
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 50%;
+  background:$verde url(jpbarras-logo-footer.svg) no-repeat;
+  background-position:  100% 100% ;
+  background-size: 30%;
+  color: #fff;
+  .tel{
+    font-size: clamp(1.6rem, 1.7vw, 5rem);
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
+  li{
+    display: flex;
+    align-items: center;
+    padding-bottom: .5rem;
+    img{
+      padding-right: .5rem ;
+    }
+  }
+  a{
+    color: #fff;
+  }
+}
+</style>

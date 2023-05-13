@@ -6,6 +6,9 @@ export interface Props {
 
 const { title, description } = Astro.props;
 import "../estilos/globales.scss"
+
+import Nav from "../components/Nav.astro";
+import Foot from "../components/Foot.astro";
 ---
 
 <!DOCTYPE html>
@@ -19,7 +22,11 @@ import "../estilos/globales.scss"
 		<title>{title}</title>
 	</head>
 	<body>
+		<div class="bandeja">
+			<Nav></Nav>
+		</div>
 		<slot />
+		<Foot></Foot>
 	</body>
 	<script is:inline src="/app.js"></script>
 </html>
