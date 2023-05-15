@@ -54,11 +54,11 @@
     </div>
 
     <div data-glide-el="controls">
-        <button data-glide-dir="<" class="btnFlechaVacio invertido">
-          <img src="assets/der-doble.svg" alt="arrow volken" />
+        <button data-glide-dir="<" class="btn">
+          <img src="der.svg" alt="arrow jpbarras" />
         </button>
-        <button data-glide-dir=">" class="btnFlechaVacio">
-          <img src="assets/der-doble.svg" alt="arrow volken" />
+        <button data-glide-dir=">" class="btn">
+          <img src="der.svg" alt="arrow jpbarras" />
         </button>
       </div>
 
@@ -70,6 +70,8 @@
   @import "../estilos/_variables.scss";
   @import "@glidejs/glide/src/assets/sass/glide.core";
 
+
+ 
 
   #shophome {
     margin-left: $margen-riel;
@@ -109,6 +111,25 @@
       height: 100%;
       aspect-ratio: 1.5/1;
     }
+  }
+  button{
+    background: $naranja;
+    border: none;
+    border-radius: 10rem;
+    padding: .7rem 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    @extend .anime;
+    &:hover{
+      background:$verde;
+    }
+    img{
+      max-width: .8rem;
+      height: auto;
+    }
+    &:first-child img{
+        transform: rotate(-180deg);
+      }
   }
 </style>
 
