@@ -5,7 +5,7 @@
 html {
   box-sizing: border-box;
   font-size: clamp(14px, 1.5vw, 24px);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -46,7 +46,7 @@ h2 {
   font-weight: bold;
   color: $verde;
 }
-h3{
+h3 {
   font-size: clamp(1.3em, 1.5vw, 20vw);
   font-weight: bold;
 }
@@ -66,8 +66,8 @@ a {
   color: $negro;
   @extend .anime;
   &:hover {
-      transform: scale(1.1);
-      color: $naranja;
+    transform: scale(1.1);
+    color: $naranja;
   }
 }
 
@@ -75,30 +75,68 @@ a {
   transform: scale(1.1);
 }
 
-
 .bandeja {
-    width: min(100% - 5rem, 60rem);
-    margin-inline: auto;
-  
-    @include hd{
-      width: min(100% - 5rem, 70rem);
-    }
-  
-    @include hdplus{
-      width: min(100% - 5rem, 90rem);
-    }
+  width: min(100% - 5rem, 60rem);
+  margin-inline: auto;
+
+  @include hd {
+    width: min(100% - 5rem, 70rem);
   }
 
-  .cta{
-    border: none;
-    background: $naranja;
-    border-radius: .5rem;
-    padding: .3rem 1rem;
-    font-weight: bold;
-    color: #fff;
-    &:hover{
-      background: #fff;
-      color: $naranja;
+  @include hdplus {
+    width: min(100% - 5rem, 90rem);
+  }
+}
+
+.cta {
+  border: none;
+  background: $naranja;
+  border-radius: 0.5rem;
+  padding: 0.3rem 1rem;
+  font-weight: bold;
+  color: #fff;
+  &:hover {
+    background: #fff;
+    color: $naranja;
+  }
+}
+
+.zigzag {
+  margin-bottom: $margen-abajo;
+
+  .bloque {
+  
+    &:nth-child(2n+0){
+      .der{
+        order: 1;
+        @include cel{
+          order: 2;
+        }
+      }
+      .izq {
+        order: 2;
+        padding: $margen $margen $margen 0;
+        background: $negro;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 10%,
+          $negro 0%,
+          $negro 100%
+          );
+          
+          @include cel {
+          order: 1 ;
+          padding:  0 $margen $margen $margen;
+          background: linear-gradient(
+            0deg,
+            $negro 0%,
+            $negro 85%,
+            rgba(255, 255, 255, 0) 15%,
+          );
+        }
+    }
+    
+   
     }
   }
- 
+}

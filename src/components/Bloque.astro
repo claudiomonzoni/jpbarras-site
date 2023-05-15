@@ -1,0 +1,82 @@
+---
+export interface props {
+  imagen: string;
+  encabezado: string;
+  parrafo: string;
+  liga: string;
+}
+const { imagen, encabezado, parrafo, liga } = Astro.props;
+---
+
+<div class="bloque">
+  <div class="izq">
+    <img src={imagen} alt={encabezado} />
+  </div>
+  <div class="der">
+    <div class="conte">
+      <h2>{encabezado}</h2>
+      <p set:html={parrafo} />
+      <a href={liga} class="cta">en savoir plus</a>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+
+  .bloque {
+    display: flex;
+    @include cel {
+      flex-wrap: wrap;
+    }
+  }
+  .izq,
+  .der {
+    flex: 1 0 50%;
+    @include cel {
+      flex: 1 0 100%;
+    }
+  }
+  .izq {
+    padding: $margen 0 $margen $margen;
+    background: $verde;
+    background: linear-gradient(
+      90deg,
+      $verde 0%,
+      $verde 90%,
+      rgba(255, 255, 255, 0) 10%
+    );
+    @include cel {
+
+      padding: 0 $margen $margen $margen;
+      background: linear-gradient(
+        0deg,
+        $verde 0%,
+        $verde 85%,
+        rgba(255, 255, 255, 0) 15%
+      );
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .der {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include cel {
+      padding: $margen 0;
+      .conte {
+        width: 80%;
+      }
+    }
+  }
+  .der p {
+    padding: 0.8rem 0;
+  }
+  .conte {
+    width: 70%;
+  }
+</style>
