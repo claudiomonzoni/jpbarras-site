@@ -1,23 +1,21 @@
 ---
-// export interface Props {
-// 	title: string;
-// 	body: string;
-// 	href: string;
-// }
-
-// const { href, title, body } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // quitamo el primero "/"
 
 ---
 
 <nav>
   <button class="menu-toggle">Menu</button>
-  <img
+  <a href="/">
+    <img
     src="jpbarras-logo.svg"
     alt="JPBarras electricite in Crans Montana"
     id="logo"
-  />
+    />
+  </a>
   <ul>
-    <li><a href="#">Électricité</a></li>
+
+    <li><a href="/electricite" class={currentPath === "electricite" ? "selected" : ""} >Électricité</a></li>
     <li><a href="#">Électroménager</a></li>
     <li><a href="#">Shop in Crans</a></li>
     <li><a href="#">Services</a></li>
