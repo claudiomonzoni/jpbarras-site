@@ -3,10 +3,12 @@ export interface props {
   encabezado: string;
   parrafo: string;
   imagenurl: string;
+  home:boolean;
 }
 
-const { encabezado, parrafo, imagenurl } = Astro.props;
+const { encabezado, parrafo, imagenurl, home} = Astro.props;
 import Carrusel from "../components/Carrusel.astro"
+
 ---
 
 <section id="hero">
@@ -17,8 +19,9 @@ import Carrusel from "../components/Carrusel.astro"
     </div>
   </div>
   <div class="der">
-    <!-- <img src={imagenurl} alt={encabezado} /> -->
-    <Carrusel></Carrusel>
+    {    home === "true" ? <Carrusel></Carrusel> : <img src={imagenurl} alt={encabezado}  />}
+ 
+  
     
   </div>
 </section>
@@ -31,7 +34,7 @@ import Carrusel from "../components/Carrusel.astro"
     grid-template-rows: 10% 1fr 10%;
     margin-bottom: $margen-abajo;
     @include cel{
-      grid-template-rows: 1fr 1fr .3fr;
+      grid-template-rows: 1fr 1fr .4fr;
 
     }
     .izq {
@@ -46,7 +49,6 @@ import Carrusel from "../components/Carrusel.astro"
         grid-column: 1 / -1;
         grid-row: 1 / span 1;
         padding: 15% 0;
-
         }
       h1 {
         font-weight: bold;
@@ -74,6 +76,7 @@ import Carrusel from "../components/Carrusel.astro"
         $negro 100%
         );
         @include cel{
+          padding: 2.5rem;
           background: linear-gradient(
             0deg,
             rgba(255, 255, 255, 0) 15%,

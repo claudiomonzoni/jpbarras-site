@@ -1,0 +1,62 @@
+---
+export interface props{
+    imagen:string;
+    encabezado:string;
+    parrafo: string;
+    liga:string;
+}
+const {imagen,encabezado,parrafo, liga} = Astro.props
+---
+
+<div id="BannerNav">
+    <div class="izq">
+        <img src={imagen} alt={encabezado}>
+    </div>
+    <div class="der">
+        <div class="conte">
+            <h3> {encabezado} </h3>
+            <p set:html={parrafo}></p>
+            <a href={liga} class="cta">voir plus</a>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    @import "../estilos/_variables.scss";
+
+#BannerNav{
+    display: flex;
+    margin-bottom: $margen-abajo;
+    background: $negro;
+    @include cel{
+        flex-wrap: wrap;
+        .izq, .der{
+            flex: 1 0 100% !important;
+        }
+        .der{
+            padding: $margen-abajo 0;
+        }
+    }
+    .izq{
+        flex: 1 0 50%;
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .der{
+        flex: 1 0 50%;
+        display: inherit;
+        justify-content: center;
+        align-items: center;
+        .conte{
+            color: #fff;
+            width: 70%;
+        }
+        p{
+            padding: 1rem 0;
+        }
+    }
+}
+</style>
