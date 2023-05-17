@@ -34,6 +34,7 @@ import Carrusel from "../components/Carrusel.astro"
     grid-template-rows: 10% 1fr 10%;
     margin-bottom: $margen-abajo;
     @include cel{
+      margin-bottom: 0;
       grid-template-rows: 1fr 1fr .4fr;
 
     }
@@ -87,6 +88,7 @@ import Carrusel from "../components/Carrusel.astro"
         @include cel{
         grid-column: 1 / -1;
         grid-row: 2 / -1;
+        height: 60vh;
       }
       img {
         object-fit: cover;
