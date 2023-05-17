@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import BannerNav from "../components/BannerNav.astro";
+
+import i18next, { t, changeLanguage } from "i18next";
+
+changeLanguage("fr");
+---
+
+<Layout
+  title="J.P. Barras Electricité SA | Électroménager"
+  description="Nous vous conseillons dans le choix de vos appareils, assurons la pose et l’entretien de votre électroménager."
+>
+  <Hero
+    encabezado="Électroménager"
+    parrafo="Nous vous conseillons dans le choix de vos appareils, <b>assurons la pose et l’entretien de votre électroménager.</b> "
+    imagenurl="/electromenager-main-section.webp"
+    home="false"
+  />
+
+  <div class="bandeja">
+    <div id="electro">
+      
+      </div>
+    
+
+    <BannerNav
+      encabezado="Shop in Crans"
+      parrafo="Plus de 10'000 articles, un service de qualité et personnalisé..."
+      liga="/shopincrans"
+      imagen="/shop-in-crans-home.webp"
+    />
+  </div>
+</Layout>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+
+  
+</style>

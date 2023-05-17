@@ -141,3 +141,31 @@ a {
     }
   }
 }
+
+input, textarea, button {
+  background: $azul;
+  border: none;
+  width: 100%;
+  border-radius: .3rem;
+  padding: .7rem;
+  font-weight: bold;
+  font-size: .9rem;
+  margin-bottom: .5rem;
+  color: #fff;
+}
+textarea{
+  margin-bottom: 0rem;
+}
+textarea::placeholder, input::placeholder{
+color: #fff;
+}
+button{
+  background: $naranja;
+  width: 50%;
+  color: #fff;
+  cursor: pointer;
+  &:hover{
+    background: $verde;
+
+  }
+}

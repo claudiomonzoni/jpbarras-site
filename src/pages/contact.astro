@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import BannerNav from "../components/BannerNav.astro";
+
+import i18next, { t, changeLanguage } from "i18next";
+
+changeLanguage("fr");
+---
+
+<Layout
+  title="J.P. Barras Electricité SA | Contact"
+  description="Lorem ipsum dolor sit amet consectetur. Tincidunt ac et leo leo arcu commodo id vitae aliquam"
+>
+  <Hero
+    encabezado="Contact"
+    parrafo="Lorem ipsum dolor sit amet consectetur. Tincidunt ac et leo leo arcu commodo id vitae aliquam"
+    imagenurl="/contact-main-section.webp"
+    home="false"
+  />
+
+  <div class="bandeja">
+    <div id="shop">
+      
+      </div>
+
+
+  
+  </div>
+</Layout>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+
+  
+</style>

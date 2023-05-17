@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import BannerNav from "../components/BannerNav.astro";
+
+import i18next, { t, changeLanguage } from "i18next";
+
+changeLanguage("fr");
+---
+
+<Layout
+  title="J.P. Barras Electricité SA | Services"
+  description="Service de gravure, de copie de clés minute et de dépôt de gaz"
+>
+  <Hero
+    encabezado="Services"
+    parrafo="Nous offrons également, au sein de notre magasin Shop in Crans, un <b>service de gravure, de copie de clés minute et de dépôt de gaz.</b>"
+    imagenurl="/services-main-section.webp"
+    home="false"
+  />
+
+  <div class="bandeja">
+    <div id="shop">
+      
+      </div>
+
+
+    <BannerNav
+      encabezado="Contact"
+      parrafo="Lorem ipsum dolor sit amet consectetur. Tincidunt ac et leo leo arcu commodo id vitae aliquam"
+      liga="/contact"
+      imagen="/contact-main-section.webp"
+    />
+  </div>
+</Layout>
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+
+  
+</style>

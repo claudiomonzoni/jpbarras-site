@@ -15,7 +15,7 @@ changeLanguage("fr");
   <Hero
     encabezado="Électricité"
     parrafo="<b>Notre équipe de spécialistes vous accompagne</b> dans tous vos projets et besoins liés à l'électricité."
-    imagenurl="electricite-home-jpbarras.webp"
+    imagenurl="/electricite-home-jpbarras.webp"
     home="false"
   />
 
@@ -34,19 +34,19 @@ changeLanguage("fr");
       <div class="der">
         <ul>
           <li>
-            <img src="ico-services-1.svg" alt="l'installations " />
+            <img src="/ico-services-1.svg" alt="l'installations " />
             <p>l'installations ou la rénovation électrique</p>
           </li>
           <li>
-            <img src="ico-services-2.svg" alt="la réparation " />
+            <img src="/ico-services-2.svg" alt="la réparation " />
             <p>la réparation et l'entretien d'immeuble</p>
           </li>
           <li>
-            <img src="ico-services-3.svg" alt="télécommunications " />
+            <img src="/ico-services-3.svg" alt="télécommunications " />
             <p>les télécommunications et l'internet</p>
           </li>
           <li>
-            <img src="ico-services-4.svg" alt="OIBT " />
+            <img src="/ico-services-4.svg" alt="OIBT " />
             <p>le contrôle OIBT</p>
           </li>
         </ul>
@@ -56,7 +56,7 @@ changeLanguage("fr");
     <div id="contacto">
       <div class="izq">
         <img
-          src="electricite-worker-jpbarras.webp"
+          src="/electricite-worker-jpbarras.webp"
           alt="electricite jp barras"
         />
       </div>
@@ -78,7 +78,7 @@ changeLanguage("fr");
                 <input type="text" name="ville" id="ville" placeholder="Ville" />
                 <input type="text" name="email" id="email" placeholder="Email" />
                 <textarea name="commentaires" id="commentaires" cols="30" rows="10"
-                ></textarea>
+                placeholder="Commentaires" ></textarea>
                 <button>Envoyer</button>
                 <!-- Nous vous remercions pour votre message. Notre équipe vous contactera dans les meilleures délais. -->
               </div>
@@ -89,8 +89,8 @@ changeLanguage("fr");
     <BannerNav
       encabezado="Électroménager"
       parrafo="Nous vous conseillons dans le choix de vos appareils..."
-      liga="#"
-      imagen="electromenager-main-section.webp"
+      liga="/electromenager"
+      imagen="/electromenager-main-section.webp"
     />
   </div>
 </Layout>
@@ -147,6 +147,9 @@ changeLanguage("fr");
         width: 80%;
       }
     }
+    p{
+      padding-bottom: $margen;
+    }
 
     li {
       display: flex;
@@ -167,6 +170,15 @@ changeLanguage("fr");
   #contacto {
     display: flex;
     margin-bottom: $margen-abajo;
+  @include cel{
+    flex-wrap: wrap;
+    .izq, .der{
+      flex: 1 0 100%;
+    }
+    .der .conte{
+     width: 80%;
+    }
+  }
     .izq {
         flex: 1 0 40%;
       padding: $margen 0 $margen $margen;

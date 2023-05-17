@@ -16,10 +16,10 @@ const currentPath = pathname.slice(1); // quitamo el primero "/"
   <ul>
 
     <li><a href="/electricite" class={currentPath === "electricite" ? "selected" : ""} >Électricité</a></li>
-    <li><a href="#">Électroménager</a></li>
-    <li><a href="#">Shop in Crans</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="/electromenager" class={currentPath === "electromenager" ? "selected" : ""}>Électroménager</a></li>
+    <li><a href="/shopincrans" class={currentPath === "shopincrans" ? "selected" : ""}>Shop in Crans</a></li>
+    <li><a href="/services" class={currentPath === "services" ? "selected" : ""}>Services</a></li>
+    <li><a href="/contact" class={currentPath === "contact" ? "selected" : ""}>Contact</a></li>
   </ul>
   <ul>
     <li><a href="#">it</a></li>
