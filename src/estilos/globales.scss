@@ -40,11 +40,13 @@ h3 {
 }
 h1 {
   font-size: clamp(3em, 5vw, 90vw);
+  padding-bottom: 1rem;
 }
 h2 {
   font-size: clamp(2em, 3vw, 60vw);
   font-weight: bold;
   color: $verde;
+  padding-bottom: 1rem;
 }
 h3 {
   font-size: clamp(1.3em, 1.5vw, 20vw);
@@ -68,6 +70,9 @@ a {
   &:hover {
     transform: scale(1.1);
     color: $naranja;
+    @include cel{
+      transform: scale(0);
+    }
   }
 }
 
@@ -142,11 +147,11 @@ a {
   }
 }
 
-input, textarea, button {
+input, textarea, .boton {
   background: $azul;
   border: none;
   width: 100%;
-  border-radius: .3rem;
+  border-radius: 0.5rem;
   padding: .7rem;
   font-weight: bold;
   font-size: .9rem;
@@ -159,7 +164,7 @@ textarea{
 textarea::placeholder, input::placeholder{
 color: #fff;
 }
-button{
+.boton{
   background: $naranja;
   width: 50%;
   color: #fff;
