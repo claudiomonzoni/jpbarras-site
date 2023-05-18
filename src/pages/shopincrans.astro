@@ -21,10 +21,86 @@ changeLanguage("fr");
 
   <div class="bandeja">
     <div id="shop">
-      
+      <p>
+        Que vous désiriez cuisiner, recevoir, offrir, nettoyer, voyager ou
+        encore cajoler vos animaux de compagnie, bricoler ou jardiner, vous
+        trouverez votre bonheur parmi notre vaste assortiment.
+      </p>
+    </div>
+
+    <div id="categorias">
+      <div class="cat">
+        <img src="/shop-in-crans-art-de-la-table.webp" alt="art de la table" />
+        <h2>Art de la table</h2>
       </div>
+      <div class="cat">
+        <img src="/shop-in-crans-ambiance.webp" alt="Ambiance" />
+        <h2>Ambiance</h2>
+      </div>
+      <div class="cat">
+        <img src="/shop-in-crans-animalerie.webp" alt="Animalerie" />
+        <h2>Animalerie</h2>
+      </div>
+      <div class="cat">
+        <img src="/shop-in-crans-bagagerie.webp" alt="Bagagerie" />
+        <h2>Bagagerie</h2>
+      </div>
+      <div class="cat">
+        <img src="/shop-in-crans-eclairage.webp" alt="Éclairage " />
+        <h2>Éclairage</h2>
+      </div>
+      <div class="cat">
+        <img src="/shop-in-crans-entretien.webp" alt="Entretien" />
+        <h2>Entretien</h2>
+      </div>
+      <div class="cat">
+        <img
+          src="/shop-in-crans-petit-electromenager.webp"
+          alt="Petit électroménager"
+        />
+        <h2>Petit électroménager</h2>
+      </div>
+      <div class="cat">
+        <img src="/shop-in-crans-outlilage.webp" alt="Outillage" />
+        <h2>Outillage</h2>
+      </div>
+      <div class="cat">
+        <img src="/shop-in-crans-securite.webp" alt="Sécurité" />
+        <h2>Sécurité</h2>
+      </div>
+    </div>
 
-
+    <div id="brands">
+      <p><b>Nous travaillons avec de nombreuses marques dont notamment</b></p>
+      <div class="conte">
+        <img src="/logos/alessi.png" alt="alessi" />
+        <img src="/logos/berkel.png" alt="berkel" />
+        <img src="/logos/Bosch.png" alt="Bosch" />
+        <img src="/logos/Brabantia.png" alt="Brabantia" />
+        <img src="/logos/braun.png" alt="braun" />
+        <img src="/logos/Campingaz.png" alt="Campingaz" />
+        <img src="/logos/duni.png" alt="Duni" />
+        <img src="/logos/emile-henry.png" alt="Emilie henry" />
+        <img src="/logos/gaggenau.png" alt="Gaggenau" />
+        <img src="/logos/Jura.png" alt="Jura" />
+        <img src="/logos/Kaercher.png" alt="Kaercher" />
+        <img src="/logos/larbre.png" alt="larbre" />
+        <img src="/logos/laurastar.png" alt="Laurastar" />
+        <img src="/logos/le-creuset.png" alt="le creuset" />
+        <img src="/logos/Liebherr.png" alt="Liebherr" />
+        <img src="/logos/miele.png" alt="Miele" />
+        <img src="/logos/nespresso.png" alt="nespresso" />
+        <img src="/logos/nilfisk.png" alt="nilfisk" />
+        <img src="/logos/nordisk.png" alt="nordisk" />
+        <img src="/logos/Philips.png" alt="Phillips" />
+        <img src="/logos/samsonite.png" alt="Samsonite" />
+        <img src="/logos/sneg.png" alt="Sneg" />
+        <img src="/logos/soirella.png" alt="soirella" />
+        <img src="/logos/Victorinox.png" alt="Victorinox" />
+        <img src="/logos/villeroy-boch.png" alt="villeroy boch" />
+        <img src="/logos/wmf.png" alt="Wmf" />
+      </div>
+    </div>
     <BannerNav
       encabezado="Services"
       parrafo="Nous offrons également, au sein de notre magasin Shop in Crans..."
@@ -37,5 +113,69 @@ changeLanguage("fr");
 <style lang="scss">
   @import "../estilos/_variables.scss";
 
-  
+  #shop {
+    p {
+      margin: 8rem 0 $margen-abajo 0;
+      width: 50%;
+      @include cel {
+        margin: 0;
+        width: 80%;
+      }
+    }
+  }
+  #categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2%;
+    .cat {
+      flex: 1 0 31%;
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 2/1.2;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+      h2 {
+        margin: 1rem 0 2rem;
+        font-size: clamp(1.4rem, 2vw, 3rem);
+      }
+    }
+
+    @include cel {
+      margin-top: $margen;
+      .cat {
+        flex: 0 0 48%;
+      }
+    }
+  }
+
+
+  #brands{
+    margin: $margen-abajo 0;
+    @include cel {
+      margin: 0  0 $margen-abajo 0;
+    }
+    .conte{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0 $margen-abajo;
+      @include cel {
+        padding: 0 1rem;
+      }
+
+      img{
+        padding: 1rem;
+        flex: 0 1 auto;
+        @include cel {
+          flex: 0 1 auto;
+          width: 50%;
+          padding: 1rem 2rem;
+        }
+      }
+    }
+  }
 </style>
