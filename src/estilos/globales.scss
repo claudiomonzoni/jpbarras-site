@@ -71,7 +71,8 @@ a {
     transform: scale(1.1);
     color: $naranja;
     @include cel{
-      transform: scale(0);
+      transform: scale(1);
+      transform: none;
     }
   }
 }
