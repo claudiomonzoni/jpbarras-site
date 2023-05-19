@@ -16,7 +16,8 @@ const { imagen, encabezado, parrafo, liga } = Astro.props;
     <div class="conte">
       <h2>{encabezado}</h2>
       <p set:html={parrafo} />
-      <a href={liga} class="cta">en savoir plus</a>
+    {liga==="#" ? "" : <a href={liga} class="cta">en savoir plus</a> }
+    
     </div>
   </div>
 </div>
@@ -59,6 +60,7 @@ const { imagen, encabezado, parrafo, liga } = Astro.props;
     img {
       object-fit: cover;
       width: 100%;
+      height: 100%;
     }
   }
 
@@ -66,12 +68,14 @@ const { imagen, encabezado, parrafo, liga } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: $margen-abajo 0;
     @include cel {
       padding: $margen 0;
       .conte {
         width: 80%;
       }
     }
+    
   }
   .der p {
     padding: 0 0 0.8rem ;
