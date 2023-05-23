@@ -67,7 +67,8 @@ changeLanguage("fr");
       <div id="formulario">
         <div class="conte">
           <p>
-           <b> Lorem ipsum dolor sit amet</b> consectetur adipisicing elit. Dolorem doloribus perspiciatis quisquam.
+            <b> Lorem ipsum dolor sit amet</b> consectetur adipisicing elit. Dolorem
+            doloribus perspiciatis quisquam.
           </p>
           <div class="formu">
             <input type="text" name="prenom" id="prenom" placeholder="Prénom" />
@@ -166,13 +167,18 @@ changeLanguage("fr");
       display: flex;
       gap: 2rem;
       margin-bottom: $margen-abajo;
-      @include cel{
+      @include cel {
         flex-wrap: wrap;
         #mapa,
         #formulario {
           flex: 1 0 100%;
+          .conte {
+            p{
+              padding-bottom: 1rem;
+            }
+          }
         }
-        #mapa{
+        #mapa {
           height: 35vh;
         }
       }
@@ -183,19 +189,22 @@ changeLanguage("fr");
       #mapa {
         border-radius: 1rem;
       }
-      #formulario{
+      #formulario {
         display: inherit;
-    justify-content: center;
-    align-items: center;
-    .conte,
-    ul {
-      width: 70%;
-    }
+        justify-content: center;
+        align-items: center;
+        .conte,
+        ul {
+          width: 70%;
+          @include cel{
+            width: 80%;
+          }
+        }
       }
     }
-    #hero{
-      .der{
-        @include cel{
+    #hero {
+      .der {
+        @include cel {
           height: 20vh;
         }
       }
