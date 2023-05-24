@@ -1,6 +1,7 @@
-@use "variables" as *;
+@use "_variables" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:wght@400;900&display=swap");
+
 
 html {
   box-sizing: border-box;
@@ -179,5 +180,73 @@ color: #fff;
 .disc{
   li{
     list-style: circle;
+  }
+}
+
+
+
+
+
+@import "@glidejs/glide/src/assets/sass/glide.core";
+
+
+#shophome {
+  margin-left: $margen-riel;
+  margin-top: $margen;
+  margin-bottom: $margen-abajo;
+}
+
+.card {
+  background: $beige;
+  position: relative;
+  @include cel {
+    width: 400px;
+  }
+  
+  .cat {
+    background: $negro;
+    color: $verde;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    font-size: 0.6rem;
+    right: 0;
+    top: 0;
+  }
+  .conte {
+    padding: 2rem;
+  }
+  h3 {
+    white-space: normal;
+  }
+  p {
+    padding: 1rem 0;
+    white-space: normal;
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1.5/1;
+  }
+}
+
+
+button {
+  background: $naranja;
+  border: none;
+  border-radius: 10rem;
+  padding: 0.7rem 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  @extend .anime;
+  &:hover {
+    background: $verde;
+  }
+  img {
+    max-width: 0.8rem;
+    height: auto;
+  }
+  &:first-child img {
+    transform: rotate(-180deg);
   }
 }

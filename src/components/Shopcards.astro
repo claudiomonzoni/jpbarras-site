@@ -1,57 +1,12 @@
 ---
 import Cards from "./Cards";
-
 ---
-<Cards client:only ></Cards>
+
 <section id="shophome">
   <div class="slide">
     <div class="glide__track" data-glide-el="track">
       <div class="glide__slides">
-        <div class="card">
-          <div>
-            <img src="electromenager-c.webp" alt="Poner para seo" />
-          </div>
-
-          <div class="cat">Elec</div>
-          <div class="conte">
-            <h3>Offres d'affaires</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Aperiamdoloremque consectetur officiis?
-            </p>
-            <a href="#" class="cta">en savoir plus</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div>
-            <img src="electromenager-a.webp" alt="Poner para seo" />
-          </div>
-          <div class="cat">Électroménager</div>
-          <div class="conte">
-            <h3>Offres d'affaires 2</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-              doloremque consectetur officiis?
-            </p>
-            <a href="#" class="cta">en savoir plus</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div>
-            <img src="electromenager-b.webp" alt="Poner para seo" />
-          </div>
-          <div class="cat">Électroménager</div>
-          <div class="conte">
-            <h3>Offres d'affaires</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-              doloremque consectetur officiis?
-            </p>
-            <a href="#" class="cta">en savoir plus</a>
-          </div>
-        </div>
+        <Cards client:only />
       </div>
     </div>
 
@@ -66,6 +21,7 @@ import Cards from "./Cards";
   </div>
 </section>
 
+<!-- los estilos de card estan en globales  -->
 <style lang="scss">
   @import "../estilos/_variables.scss";
   @import "@glidejs/glide/src/assets/sass/glide.core";
@@ -76,39 +32,6 @@ import Cards from "./Cards";
     margin-bottom: $margen-abajo;
   }
 
-  .card {
-    background: $beige;
-    position: relative;
-    @include cel {
-      width: 400px;
-    }
-
-    .cat {
-      background: $negro;
-      color: $verde;
-      position: absolute;
-      padding: 0.5rem 1rem;
-      font-size: 0.6rem;
-      right: 0;
-      top: 0;
-    }
-    .conte {
-      padding: 2rem;
-    }
-    h3 {
-      white-space: normal;
-    }
-    p {
-      padding: 1rem 0;
-      white-space: normal;
-    }
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      aspect-ratio: 1.5/1;
-    }
-  }
   button {
     background: $naranja;
     border: none;
@@ -133,5 +56,4 @@ import Cards from "./Cards";
 <script>
   import { slide } from "../js/glide";
   slide();
-
 </script>

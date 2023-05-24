@@ -1,6 +1,8 @@
+// import style from '../estilos/card.scss';
+
 const response = await fetch(
-//   "http://localhost/jpbarras/cockpit/api/content/items/Offres?locale=default",
-  "https://pruebaframer.000webhostapp.com/cms/api/content/items/Offres?locale=default",
+  "http://localhost/jpbarras/cockpit/api/content/items/Offres?locale=default",
+  // "https://pruebaframer.000webhostapp.com/cms/api/content/items/Offres?locale=default",
   {
     method: "GET",
     headers: {
@@ -16,8 +18,23 @@ export default function Cards() {
   return (
     <>
       {ofertaData.map((oferta, key) => (
-        <h2 key={key}> {oferta.Cat} </h2>
+          <div className="card" key={key}>
+          <div>
+            <img src="electromenager-a.webp" alt={oferta.Titulo} />
+          </div>
+          <div className="cat">{oferta.Cat}</div>
+          <div className="conte">
+            <h3>{oferta.Titulo}</h3>
+            <p>
+              {oferta.Texto}
+            </p>
+            <a href="#" className="cta">en savoir plus</a>
+          </div>
+        </div>
+
       ))}
     </>
   );
 }
+
+
