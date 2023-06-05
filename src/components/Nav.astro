@@ -2,6 +2,12 @@
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // quitamo el primero "/"
 
+import {
+  LanguageSelector,
+} from "astro-i18next/components";
+import { localizePath  } from "astro-i18next";
+import i18next from "i18next";
+const lang = i18next.language;
 ---
 
 <nav>
@@ -15,15 +21,16 @@ const currentPath = pathname.slice(1); // quitamo el primero "/"
   </a>
   <ul>
 
-    <li><a href="/electricite" class={currentPath === "electricite" ? "selected" : ""} >Électricité</a></li>
+    <li><a href={`/${lang}/electricite`} class={currentPath === "electricite" ? "selected" : ""} >Électricité</a></li>
     <li><a href="/electromenager" class={currentPath === "electromenager" ? "selected" : ""}>Électroménager</a></li>
     <li><a href="/shopincrans" class={currentPath === "shopincrans" ? "selected" : ""}>Shop in Crans</a></li>
     <li><a href="/services" class={currentPath === "services" ? "selected" : ""}>Services</a></li>
     <li><a href="/contact" class={currentPath === "contact" ? "selected" : ""}>Contact</a></li>
   </ul>
   <ul>
-    <li><a href="#">it</a></li>
-    <li><a href="#">en</a></li>
+    <!-- <LanguageSelector ></LanguageSelector> -->
+    <li><a href="/it">it</a></li>
+    <li><a href="/en">en</a></li>
   </ul>
 </nav>
 
@@ -114,14 +121,13 @@ const currentPath = pathname.slice(1); // quitamo el primero "/"
 
   .menu-toggle {
   position: absolute;
-
   display: none;
   @include cel {
     display: block;
     z-index: 99000;
   }
   right: 5vh;
-  top: 2.8vh;
+  top: 0vh;
   z-index: 520;
   width: 30px;
   height: 22px;

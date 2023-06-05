@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import BannerNav from "../components/BannerNav.astro";
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import BannerNav from "../../components/BannerNav.astro";
 // 46.30677523638661, 7.467911788923021
 const lat = "46.307450";
 const lang = "7.471120";
 import i18next, { t, changeLanguage } from "i18next";
 
-changeLanguage("fr");
+changeLanguage("it");
 ---
 
 <Layout
@@ -95,7 +95,7 @@ changeLanguage("fr");
   </div>
 
   <style lang="scss">
-    @import "../estilos/_variables.scss";
+    @import "../../estilos/_variables.scss";
     #contacto {
       display: flex;
       margin-bottom: $margen-abajo;

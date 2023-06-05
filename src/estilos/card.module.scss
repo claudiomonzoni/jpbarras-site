@@ -17,6 +17,7 @@
   .card {
     background: $beige;
     position: relative;
+    overflow:visible;
     @include cel {
       width: 400px;
     }
@@ -68,3 +69,8 @@
       transform: rotate(-180deg);
     }
   }
+
+  // .glide__slides{
+  //   overflow: none !important;
+  //   border: solid;
+  // }

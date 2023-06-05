@@ -1,0 +1,22 @@
+@import "_variables.scss";
+
+
+.ofertaInt{
+    background:$negro;
+    color: #fff ;
+    // display: none;
+    position: absolute;
+    z-index: 9999;
+    width: 10%;
+    height: auto;
+    overflow-x:hidden ;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    p{
+      white-space: pre-wrap !important;
+    }
+    padding: 1rem;
+
+  }
