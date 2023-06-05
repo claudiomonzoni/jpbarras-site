@@ -189,7 +189,9 @@ color: #fff;
 
 @import "@glidejs/glide/src/assets/sass/glide.core";
 
-
+#carrusel{
+  position: relative;
+}
 #shophome {
   margin-left: $margen-riel;
   margin-top: $margen;

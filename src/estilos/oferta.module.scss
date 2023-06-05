@@ -1,14 +1,22 @@
 @import "_variables.scss";
 
-
+#bandeja{
+  background:$negro;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .ofertaInt{
-    background:$negro;
     color: #fff ;
     // display: none;
-    position: absolute;
-    z-index: 9999;
-    width: 10%;
-    height: auto;
+    width: 80%;
+    border: solid;
     overflow-x:hidden ;
     img{
       width: 100%;

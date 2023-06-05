@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { slide } from "../js/glide";
-import "../estilos/card.module.scss";
+// import "../estilos/card.module.scss";
 import Oferta from "./Oferta";
 
 const response = await fetch(
@@ -15,24 +15,30 @@ const response = await fetch(
 );
 
 const ofertaData = await response.json();
+
 export default function Shopcard() {
-  function btnOferta(props) {
-    // e.preventDefault();
-    alert(props);
-  }
+  const [abierto, setAbierto] = useState(false);
+  const [props, setProps] = useState();
+
   useEffect(() => {
     slide();
   }, []);
 
+  const btnOferta = (props) => {
+    // console.log(props);
+    setAbierto(!abierto);
+    setProps(props);
+  };
+
   return (
     <>
       <section id="shophome">
+        {abierto && <Oferta props={props} />}
         <div className="slide">
           <div className="glide__track" data-glide-el="track">
             <div className="glide__slides">
               {ofertaData.map((oferta, key) => (
                 <div className="card" key={key}>
-                  <Oferta props={oferta}></Oferta>
                   <div>
                     <img
                       src={`http://localhost/jpbarras/cockpit/storage/uploads/${oferta.principale.path}`}
@@ -44,8 +50,9 @@ export default function Shopcard() {
                     <h3>{oferta.Titulo}</h3>
                     <p>{oferta.extracto}</p>
                     <a
-                      href="#"
-                      onClick={btnOferta(oferta.Titulo)}
+                      onClick={() => {
+                        btnOferta(oferta);
+                      }}
                       className="cta"
                     >
                       en savoir plus
