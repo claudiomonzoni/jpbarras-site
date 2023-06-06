@@ -29,11 +29,14 @@ export default function Shopcard() {
     setAbierto(!abierto);
     setProps(props);
   };
+  const cerrar = () => {
+    setAbierto(false)
+    }
 
   return (
     <>
       <section id="shophome">
-        {abierto && <Oferta props={props} />}
+        {abierto && <Oferta props={props} cierrate = {cerrar} />}
         <div className="slide">
           <div className="glide__track" data-glide-el="track">
             <div className="glide__slides">
@@ -64,10 +67,10 @@ export default function Shopcard() {
           </div>
 
           <div data-glide-el="controls">
-            <button data-glide-dir="<" className="btn">
+            <button data-glide-dir="<" className="btn circulo">
               <img src="der.svg" alt="arrow jpbarras" />
             </button>
-            <button data-glide-dir=">" className="btn">
+            <button data-glide-dir=">" className="btn circulo">
               <img src="der.svg" alt="arrow jpbarras" />
             </button>
           </div>

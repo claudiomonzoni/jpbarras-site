@@ -11,20 +11,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 }
 .ofertaInt{
-    color: #fff ;
-    // display: none;
-    width: 80%;
+    position: relative;
+    width: 45%;
+    max-height: 90vh;
     border: solid;
-    overflow-x:hidden ;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    background: $beige;
+    @include cel {
+      width: 80%;
+    }
     img{
       width: 100%;
       height: auto;
+      aspect-ratio: 8/5;
+      object-fit: cover;
     }
     p{
       white-space: pre-wrap !important;
     }
-    padding: 1rem;
-
+    a{
+      position: fixed;
+      top: 2%;
+      right: 3%;
+      img{
+        width: 40px;
+        cursor: pointer;
+      }
+    }
+    .bande{
+      padding: 2rem;
+    }
   }
