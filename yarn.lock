@@ -69,10 +69,10 @@
   dependencies:
     "prismjs" "^1.28.0"
 
-"@astrojs/react@^2.2.0":
-  "integrity" "sha512-DwwbmSGVKtHwufatZQwmqIor2MN4RXDdAujwerT60m3xgbv8D0v+s6fX/uRJ0ApWYLLFDzJGLhrmI7UhufpmPg=="
-  "resolved" "https://registry.npmjs.org/@astrojs/react/-/react-2.2.0.tgz"
-  "version" "2.2.0"
+"@astrojs/react@^2.2.1":
+  "integrity" "sha512-nq5Zr8iWdwjSp5fh1NReaCplwsnL4w5PXAY5XWu1jE/frxEfF/ycGHrrhwWW0uJHX9G+kUtmQLR0GBhlR4FmAw=="
+  "resolved" "https://registry.npmjs.org/@astrojs/react/-/react-2.2.1.tgz"
+  "version" "2.2.1"
   dependencies:
     "@babel/core" ">=7.0.0-0 <8.0.0"
     "@babel/plugin-transform-react-jsx" "^7.17.12"
@@ -523,17 +523,17 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   "version" "15.7.5"
 
-"@types/react-dom@^17.0.17 || ^18.0.6":
+"@types/react-dom@^17.0.17 || ^18.0.6", "@types/react-dom@^18.2.4":
   "integrity" "sha512-G2mHoTMTL4yoydITgOGwWdWMVd8sNgyEP85xVmMKAPUBwQWm9wBPQUmvbeF4V3WBY1P7mmL4BkjQ0SqUpf1snw=="
   "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.4.tgz"
   "version" "18.2.4"
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^17.0.50 || ^18.0.21":
-  "integrity" "sha512-wRZClXn//zxCFW+ye/D2qY65UsYP1Fpex2YXorHc8awoNamkMZSvBxwxdYVInsHOZZd2Ppq8isnSzJL5Mpf8OA=="
-  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.2.6.tgz"
-  "version" "18.2.6"
+"@types/react@*", "@types/react@^17.0.50 || ^18.0.21", "@types/react@^18.2.8":
+  "integrity" "sha512-lTyWUNrd8ntVkqycEEplasWy2OxNlShj3zqS0LuB1ENUGis5HodmhM7DtCoUGbxj3VW/WsGA0DUhpG6XrM7gPA=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.2.8.tgz"
+  "version" "18.2.8"
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -1710,6 +1710,11 @@
   "resolved" "https://registry.npmjs.org/iso-639-1/-/iso-639-1-2.1.15.tgz"
   "version" "2.1.15"
 
+"jquery@^3.7.0":
+  "integrity" "sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.7.0.tgz"
+  "version" "3.7.0"
+
 "js-tokens@^3.0.0 || ^4.0.0", "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
   "resolved" "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -2552,7 +2557,7 @@
   "resolved" "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   "version" "1.2.3"
 
-"react-dom@^17.0.2 || ^18.0.0":
+"react-dom@^17.0.2 || ^18.0.0", "react-dom@^18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"

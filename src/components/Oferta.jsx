@@ -13,11 +13,11 @@ export default function Oferta({props, cierrate}) {
         <a className="cerrar" onClick={()=>{ cierrate()}}>
         <img src="/cerrar.svg" alt="close" />
         </a>
-        { Imagenes[0] === undefined ? <img src={`http://localhost/jpbarras/cockpit/storage/uploads/${principale.path}`} alt={Cats} /> : "" }
+        { Imagenes[0] === undefined ? <img src={`http://www.jpbarras.ch/admin/storage/uploads/${principale.path}`} alt={Cats} /> : "" }
 
         {Imagenes.map((ima, key) => (
           <img
-            src={`http://localhost/jpbarras/cockpit/storage/uploads/${ima.path}`}
+            src={`http://www.jpbarras.ch/admin/storage/uploads/${ima.path}`}
             alt={Cats}
             key={key}
           />

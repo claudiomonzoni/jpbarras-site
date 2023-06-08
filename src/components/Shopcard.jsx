@@ -4,8 +4,8 @@ import { slide } from "../js/glide";
 import Oferta from "./Oferta";
 
 const response = await fetch(
-  "http://localhost/jpbarras/cockpit/api/content/items/Offres?locale=default",
-  // "https://pruebaframer.000webhostapp.com/cms/api/content/items/Offres?locale=default",
+  // "http://localhost/jpbarras/cockpit/api/content/items/Offres?locale=default",
+  "http://www.jpbarras.ch/admin/api/content/items/Offres?locale=default",
   {
     method: "GET",
     headers: {
@@ -44,7 +44,7 @@ export default function Shopcard() {
                 <div className="card" key={key}>
                   <div>
                     <img
-                      src={`http://localhost/jpbarras/cockpit/storage/uploads/${oferta.principale.path}`}
+                      src={`http://www.jpbarras.ch/admin/storage/uploads/${oferta.principale.path}`}
                       alt={oferta.Titulo}
                     />
                   </div>
