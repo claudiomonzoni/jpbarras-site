@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { slide } from "../js/glide";
-// import "../estilos/card.module.scss";
 import Oferta from "./Oferta";
+
+import i18next, {t} from "i18next";
+// const rest = `http://www.jpbarras.ch/admin/api/content/items/Offres?locale=${lang}`;
+
 
 const response = await fetch(
   // "http://localhost/jpbarras/cockpit/api/content/items/Offres?locale=default",
@@ -25,18 +28,17 @@ export default function Shopcard() {
   }, []);
 
   const btnOferta = (props) => {
-    // console.log(props);
     setAbierto(!abierto);
     setProps(props);
   };
   const cerrar = () => {
-    setAbierto(false)
-    }
+    setAbierto(false);
+  };
 
   return (
     <>
       <section id="shophome">
-        {abierto && <Oferta props={props} cierrate = {cerrar} />}
+        {abierto && <Oferta props={props} cierrate={cerrar} />}
         <div className="slide">
           <div className="glide__track" data-glide-el="track">
             <div className="glide__slides">

@@ -16,7 +16,7 @@ changeLanguage("it");
 >
   <Hero
     encabezado="Contact"
-    parrafo="Lorem ipsum dolor sit amet consectetur. Tincidunt ac et leo leo arcu commodo id vitae aliquam"
+    parrafo="Vous avez besoin de conseils ou de renseignements? <b>Notre équipe se tient à votre disposition.</b>"
     imagenurl="/contact-main-section.webp"
     home="false"
   />
@@ -69,31 +69,36 @@ changeLanguage("it");
             <b> Lorem ipsum dolor sit amet</b> consectetur adipisicing elit. Dolorem
             doloribus perspiciatis quisquam.
           </p>
-          <div class="formu">
-            <input type="text" name="prenom" id="prenom" placeholder="Prénom" />
-            <input type="text" name="nom" id="nom" placeholder="Nom" />
-            <input
+          <div class="formu">  
+            <form id="forma" >
+
+              <input type="text" name="prenom" id="prenom" placeholder="Prénom" />
+              <input type="text" name="nom" id="nom" placeholder="Nom" />
+              <input
               type="text"
               name="adresse"
               id="adresse"
               placeholder="Adresse"
-            />
-            <input type="text" name="ville" id="ville" placeholder="Ville" />
-            <input type="text" name="email" id="email" placeholder="Email" />
-            <textarea
+              />
+              <input type="text" name="ville" id="ville" placeholder="Ville" />
+              <input type="text" name="email" id="email" placeholder="Email" />
+              <textarea
               name="commentaires"
               id="commentaires"
               cols="30"
               rows="10"
               placeholder="Commentaires"></textarea>
-            <button class="boton">Envoyer</button>
-            <!-- Nous vous remercions pour votre message. Notre équipe vous contactera dans les meilleures délais. -->
+              <button class="boton" id="contactoBtn">Envoyer</button>
+              <!-- Nous vous remercions pour votre message. Notre équipe vous contactera dans les meilleures délais. -->
+            </form>
+            <div id="msj"></div>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 
+  
   <style lang="scss">
     @import "../../estilos/_variables.scss";
     #contacto {
@@ -216,7 +221,6 @@ changeLanguage("it");
     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
     crossorigin=""
   />
-
   <script src="/leaflet.js" is:inline></script>
 
   <script define:vars={{ lat, lang }}>
@@ -232,5 +236,54 @@ changeLanguage("it");
       fillOpacity: 0.5,
       radius: 100,
     }).addTo(map);
+  </script>
+
+  <script>
+    import $ from 'jquery'
+
+$(function () {
+    $("#contactoBtn").on("click",function (e) {
+      var prenom = $("#prenom").val();
+      var nom = $("#nom").val();
+      var adresse = $("#adresse").val();
+      var ville = $("#ville").val();
+      var email = $("#email").val();
+      var commentaires  = $("#commentaires").val();
+  
+      $("#msj").empty(); // To empty previous error/success message.
+      // Checking for blank fields.
+  
+      if (
+        prenom == "" ||
+        nom == "" ||
+        adresse == "" ||
+        email == "")
+         {
+        alert("Veuillez remplir tout les champs");
+      } else {
+        $.post(
+          "/contacto.php",
+          {
+            prenom1: prenom,
+            nom1: nom,
+            adresse1: adresse,
+            ville1: ville,
+            email1: email,
+            commentaires1: commentaires,
+          },
+          function (data) {
+            $("#msj").append(data); // Append returned message to message paragraph.
+            $("#forma")[0].reset(); // To reset form fields on success.
+            if (
+              data == "Nous vous remercions pour votre message. Notre équipe vous contactera dans les meilleures délais."
+            ) {
+            }
+          }
+        );
+      }
+  
+      e.preventDefault();
+    });
+  });
   </script>
 </Layout>

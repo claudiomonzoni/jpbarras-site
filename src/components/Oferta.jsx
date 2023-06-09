@@ -1,8 +1,5 @@
 import Style from "../estilos/oferta.module.scss";
 
-// import {useState} from 'react'
-
-// console.log(abierto)
 
 export default function Oferta({props, cierrate}) {
   const { Titulo, Cats, principale, texto, Imagenes } = props;

@@ -66,20 +66,28 @@ changeLanguage("en");
                 votre projet? <b>N’hésitez pas à nous contacter.</b>
               </p>
               <div class="formu">
-                <input type="text" name="prenom" id="prenom" placeholder="Prénom" />
-                <input type="text" name="nom" id="nom" placeholder="Nom" />
-                <input
+                <form id="forma" >
+
+                  <input type="text" name="prenom" id="prenom" placeholder="Prénom" />
+                  <input type="text" name="nom" id="nom" placeholder="Nom" />
+                  <input
                   type="text"
                   name="adresse"
                   id="adresse"
                   placeholder="Adresse"
-                />
-                <input type="text" name="ville" id="ville" placeholder="Ville" />
-                <input type="text" name="email" id="email" placeholder="Email" />
-                <textarea name="commentaires" id="commentaires" cols="30" rows="10"
-                placeholder="Commentaires" ></textarea>
-                <button class="boton">Envoyer</button>
-                <!-- Nous vous remercions pour votre message. Notre équipe vous contactera dans les meilleures délais. -->
+                  />
+                  <input type="text" name="ville" id="ville" placeholder="Ville" />
+                  <input type="text" name="email" id="email" placeholder="Email" />
+                  <textarea
+                  name="commentaires"
+                  id="commentaires"
+                  cols="30"
+                  rows="10"
+                  placeholder="Commentaires"></textarea>
+                  <button class="boton" id="contactoBtn">Envoyer</button>
+                  <!-- Nous vous remercions pour votre message. Notre équipe vous contactera dans les meilleures délais. -->
+                </form>
+                <div id="msj"></div>
               </div>
         </div>
       </div>
@@ -89,7 +97,7 @@ changeLanguage("en");
       encabezado="Électroménager"
       parrafo="Nous vous conseillons dans le choix de vos appareils..."
       liga="/electromenager"
-      imagen="/electromenager-main-section.webp"
+      imagen="/electromenager-link-section.webp"
     />
   </div>
 </Layout>
@@ -202,3 +210,53 @@ changeLanguage("en");
     }
   }
 </style>
+
+<script>
+   import $ from 'jquery'
+
+$(function () {
+  $("#contactoBtn").on("click",function (e) {
+    var prenom = $("#prenom").val();
+    var nom = $("#nom").val();
+    var adresse = $("#adresse").val();
+    var ville = $("#ville").val();
+    var email = $("#email").val();
+    var commentaires  = $("#commentaires").val();
+
+    $("#msj").empty(); // To empty previous error/success message.
+    // Checking for blank fields.
+
+    if (
+      prenom == "" ||
+      nom == "" ||
+      adresse == "" ||
+      email == "")
+       {
+      alert("Veuillez remplir tout les champs");
+    } else {
+      $.post(
+        "/econtacto.php",
+        {
+          prenom1: prenom,
+          nom1: nom,
+          adresse1: adresse,
+          ville1: ville,
+          email1: email,
+          commentaires1: commentaires,
+        },
+        function (data) {
+          $("#msj").append(data); // Append returned message to message paragraph.
+          $("#forma")[0].reset(); // To reset form fields on success.
+          if (
+            data == "Nous vous remercions pour votre message. Notre équipe vous contactera dans les meilleures délais."
+          ) {
+          }
+        }
+      );
+    }
+
+    e.preventDefault();
+  });
+});
+</script>
+</Layout>
