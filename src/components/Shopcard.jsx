@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { slide } from "../js/glide";
-// import "../estilos/card.module.scss";
 import Oferta from "./Oferta";
 
+import i18next, {t} from "i18next";
+// const rest = `http://www.jpbarras.ch/admin/api/content/items/Offres?locale=${lang}`;
+
+
 const response = await fetch(
-  "http://localhost/jpbarras/cockpit/api/content/items/Offres?locale=default",
-  // "https://pruebaframer.000webhostapp.com/cms/api/content/items/Offres?locale=default",
+  // "http://localhost/jpbarras/cockpit/api/content/items/Offres?locale=default",
+  "http://www.jpbarras.ch/admin/api/content/items/Offres?locale=default",
   {
     method: "GET",
     headers: {
@@ -25,18 +28,17 @@ export default function Shopcard() {
   }, []);
 
   const btnOferta = (props) => {
-    // console.log(props);
     setAbierto(!abierto);
     setProps(props);
   };
   const cerrar = () => {
-    setAbierto(false)
-    }
+    setAbierto(false);
+  };
 
   return (
     <>
       <section id="shophome">
-        {abierto && <Oferta props={props} cierrate = {cerrar} />}
+        {abierto && <Oferta props={props} cierrate={cerrar} />}
         <div className="slide">
           <div className="glide__track" data-glide-el="track">
             <div className="glide__slides">
@@ -44,7 +46,7 @@ export default function Shopcard() {
                 <div className="card" key={key}>
                   <div>
                     <img
-                      src={`http://localhost/jpbarras/cockpit/storage/uploads/${oferta.principale.path}`}
+                      src={`http://www.jpbarras.ch/admin/storage/uploads/${oferta.principale.path}`}
                       alt={oferta.Titulo}
                     />
                   </div>

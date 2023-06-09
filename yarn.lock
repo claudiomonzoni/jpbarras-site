@@ -530,10 +530,17 @@
   dependencies:
     "@types/react" "*"
 
+<<<<<<< HEAD
 "@types/react@*", "@types/react@^17.0.50 || ^18.0.21", "@types/react@^18.2.9":
   "integrity" "sha512-pL3JAesUkF7PEQGxh5XOwdXGV907te6m1/Qe1ERJLgomojS6Ne790QiA7GUl434JEkFA2aAaB6qJ5z4e1zJn/w=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-18.2.9.tgz"
   "version" "18.2.9"
+=======
+"@types/react@*", "@types/react@^17.0.50 || ^18.0.21", "@types/react@^18.2.8":
+  "integrity" "sha512-lTyWUNrd8ntVkqycEEplasWy2OxNlShj3zqS0LuB1ENUGis5HodmhM7DtCoUGbxj3VW/WsGA0DUhpG6XrM7gPA=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.2.8.tgz"
+  "version" "18.2.8"
+>>>>>>> c9194bd1ae082fe487be9efea3de1bd06e4fbcab
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -1709,6 +1716,11 @@
   "integrity" "sha512-7c7mBznZu2ktfvyT582E2msM+Udc1EjOyhVRE/0ZsjD9LBtWSm23h3PtiRh2a35XoUsTQQjJXaJzuLjXsOdFDg=="
   "resolved" "https://registry.npmjs.org/iso-639-1/-/iso-639-1-2.1.15.tgz"
   "version" "2.1.15"
+
+"jquery@^3.7.0":
+  "integrity" "sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.7.0.tgz"
+  "version" "3.7.0"
 
 "js-tokens@^3.0.0 || ^4.0.0", "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="

@@ -1,10 +1,19 @@
 {
     "site": {
-      "title": "My awesome website!",
+      "title": "JP Barras frances",
       "description": "Here is the description of my awesome website!"
     },
     "home": {
-      "h1": "Everything for you",
+      "h1": "<span class='reset'>Tout pour</span> chez vous FR",
       "actualites": "Shop in Crans deals"
-    }
+    },
+    "nav": {
+      "electricite": "Électricité",
+      "electromenager": "Électroménager",
+      "shopincrans" : "Shop in Crans",
+      "services" : "Services",
+      "contact" : "Contact"
+      }
+      ,
+      "idioma" : "default"
   }
