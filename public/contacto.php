@@ -7,7 +7,7 @@ $adresse = $_POST['adresse1'];
 $ville = $_POST['ville1'];
 $email = $_POST['email1'];
 $commentaires = $_POST['commentaires1'];
-$desde = "claudiomonzoni@hotmail.com";
+$desde = "philippe.barras@jpbarras.ch";
 // $desde = "claudiomonzoni@hotmail.com";
 $from = "shopincrans@jpbarras.ch";
 
