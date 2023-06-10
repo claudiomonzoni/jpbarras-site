@@ -5,13 +5,13 @@ import Shopcard from "../../components/Shopcard.jsx";
 // import Shopcards from "../../components/Shopcards.astro";
 import Bloque from "../../components/Bloque.astro";
 import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("en");
 
+// import { Trans, HeadHrefLangs } from "astro-i18next/components";
 const lang = i18next.language;
+console.log(lang);
 ---
-
 <Layout
   title={t("site.title")}
   description="J.P. Barras Electricité SA vous propose différents services dans le domaine de l’électricité comme de l’électroménager ainsi qu’un magasin, le Shop in Crans,"
@@ -25,9 +25,10 @@ const lang = i18next.language;
 
   <div class="bandeja">
     <h2>Shop in Crans - Actualités</h2>
+    
   </div>
   <div id="carrusel">
-    <Shopcard client:only></Shopcard>
+    <Shopcard client:only idioma={lang} />
   </div>
   <!-- <Shopcards /> -->
   <div class="bandeja zigzag">

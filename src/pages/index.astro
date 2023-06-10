@@ -5,9 +5,11 @@ import Shopcard from "../components/Shopcard.jsx";
 // import Shopcards from "../components/Shopcards.astro";
 import Bloque from "../components/Bloque.astro";
 import i18next, { t, changeLanguage } from "i18next";
-// import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
 changeLanguage("fr");
 
+// import { Trans, HeadHrefLangs } from "astro-i18next/components";
+const lang = i18next.language;
 ---
 <Layout
   title={t("site.title")}
@@ -22,9 +24,10 @@ changeLanguage("fr");
 
   <div class="bandeja">
     <h2>Shop in Crans - Actualités</h2>
+    
   </div>
   <div id="carrusel">
-    <Shopcard client:only ></Shopcard>
+    <Shopcard client:only idioma={lang} />
   </div>
   <!-- <Shopcards /> -->
   <div class="bandeja zigzag">
