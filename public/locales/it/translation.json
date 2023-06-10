@@ -1,19 +1,25 @@
 {
-    "site": {
-      "title": "JP Barras italiano",
-      "description": "Here is the description of my awesome website!"
-    },
-    "home": {
-      "h1": "<span class='reset'>Italiano</span>  IT",
-      "actualites": "Shop in Crans deals"
-    },
-    "nav": {
-      "electricite": "Elettricita",
-      "electromenager": "Elettrodomestico",
-      "shopincrans" : "Shop in Crans",
-      "services" : "Servizi",
-      "contact" : "Contatto"
-      }
-      ,
-      "idioma" : "it_IT"
-  }
+  "site": {
+    "title": "JP Barras italiano",
+    "description": "Here is the description of my awesome website!"
+  },
+  "home": {
+    "h1": "<span class='reset'>Italiano</span>  IT",
+    "actualites": "Shop in Crans deals"
+  },
+  "nav": {
+    "electricite": "Elettricita",
+    "electromenager": "Elettrodomestico",
+    "shopincrans": "Shop in Crans",
+    "services": "Servizi",
+    "contact": "Contatto"
+  },
+  "navlinks": {
+    "electricite": "/it/elettricita",
+    "electromenager": "/it/elettrodomestico",
+    "shopincrans": "/it/shopincrans",
+    "services": "/it/servizi",
+    "contact": "/it/contatto"
+  },
+  "idioma": "it_IT"
+}

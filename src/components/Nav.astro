@@ -8,12 +8,14 @@ import {
 } from "astro-i18next/components";
 import { localizePath  } from "astro-i18next";
 import i18next, { t } from "i18next";
+let lang = i18next.language;
 
+lang === "fr" ? lang = "" : lang = lang
 ---
 
 <nav>
   <button class="menu-toggle">Menu</button>
-  <a href="/">
+  <a href=`/${lang}`>
     <img
     src="/jpbarras-logo.svg"
     alt="JPBarras electricite in Crans Montana"
@@ -23,11 +25,11 @@ import i18next, { t } from "i18next";
   <ul>
 
     <!-- <li><a href={`/${lang}/electricite`} class={currentPath === "electricite" ? "selected" : ""} >Électricité</a></li> -->
-    <li><a href="/electricite" class={currentPath === "electricite" ? "selected" : ""} >{t("nav.electricite")}</a></li>
-    <li><a href="/electromenager" class={currentPath === "electromenager" ? "selected" : ""}>{t("nav.electromenager")}</a></li>
-    <li><a href="/shopincrans" class={currentPath === "shopincrans" ? "selected" : ""}>{t("nav.shopincrans")}</a></li>
-    <li><a href="/services" class={currentPath === "services" ? "selected" : ""}>{t("nav.services")}</a></li>
-    <li><a href="/contact" class={currentPath === "contact" ? "selected" : ""}>{t("nav.contact")}</a></li>
+    <li><a href={t("navlinks.electricite")} class={pathname === t("navlinks.electricite") ? "selected" : ""} >{t("nav.electricite")}</a></li>
+    <li><a href={t("navlinks.electromenager")} class={currentPath === t("navlinks.electromenager") ? "selected" : ""}>{t("nav.electromenager")}</a></li>
+    <li><a href={t("navlinks.shopincrans")} class={pathname === t("navlinks.shopincrans") ? "selected" : ""}>{t("nav.shopincrans")}</a></li>
+    <li><a href={t("navlinks.services")} class={pathname === t("navlinks.services") ? "selected" : ""}>{t("nav.services")}</a></li>
+    <li><a href={t("navlinks.contact")} class={pathname === t("navlinks.contact") ? "selected" : ""}>{t("nav.contact")}</a></li>
   </ul>
   <ul>
 <LanguageSelector></LanguageSelector>

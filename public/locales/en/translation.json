@@ -1,18 +1,26 @@
 {
-    "site": {
-      "title": "JP Barras ingles",
-      "description": "Here is the description of my awesome website!"
-    },
-    "home": {
-      "h1": "<span class='reset'>Ingles</span> chez vous EN",
-      "actualites": "Shop in Crans deals"
-    },
-    "nav": {
-      "electricite": "Electricity",
-      "electromenager": "Home-appliance",
-      "shopincrans" : "Shop in Crans",
-      "services" : "Services",
-      "contact" : "Contacts"
-      },
-      "idioma" : "en_En"
-  }
+  "site": {
+    "title": "JP Barras ingles",
+    "description": "Here is the description of my awesome website!"
+  },
+  "home": {
+    "h1": "<span class='reset'>Ingles</span> chez vous EN",
+    "actualites": "Shop in Crans deals"
+  },
+  "nav": {
+    "electricite": "Electricity",
+    "electromenager": "Home-appliance",
+    "shopincrans": "Shop in Crans",
+    "services": "Services",
+    "contact": "Contacts"
+  },
+
+  "navlinks": {
+    "electricite": "/en/electricity",
+    "electromenager": "/en/home-appliance",
+    "shopincrans": "/en/shopincrans",
+    "services": "/en/services",
+    "contact": "/en/contacts"
+  },
+  "idioma": "en_En"
+}

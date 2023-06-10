@@ -3,6 +3,7 @@ import { slide } from "../js/glide";
 import Oferta from "./Oferta";
 
 export default function Shopcard({ idioma }) {
+
   const [abierto, setAbierto] = useState(false);
   const [props, setProps] = useState();
   const [lang, setLang] = useState(idioma);
@@ -30,11 +31,15 @@ export default function Shopcard({ idioma }) {
         },
       }
     );
-    const ofertaData = await response.json();
-    setDatos(ofertaData);
-    setTimeout(() => {
-     slide()
-    }, "1000");
+    const ofertaData = await response.json()
+    .then((ofertaData)=>{
+      console.log(ofertaData)
+      setDatos(ofertaData);
+
+      setTimeout(() => {
+        slide()
+      }, "500");
+    })
   };
 
   useEffect(() => {

@@ -1,19 +1,25 @@
 {
-    "site": {
-      "title": "JP Barras frances",
-      "description": "Here is the description of my awesome website!"
-    },
-    "home": {
-      "h1": "<span class='reset'>Tout pour</span> chez vous FR",
-      "actualites": "Shop in Crans deals"
-    },
-    "nav": {
-      "electricite": "Électricité",
-      "electromenager": "Électroménager",
-      "shopincrans" : "Shop in Crans",
-      "services" : "Services",
-      "contact" : "Contact"
-      }
-      ,
-      "idioma" : "default"
-  }
+  "site": {
+    "title": "JP Barras",
+    "description": "J.P. Barras Electricité SA vous propose différents services dans le domaine de l’électricité comme de l’électroménager ainsi qu’un magasin, le Shop in Crans"
+  },
+  "home": {
+    "h1": "<span class='reset'>Tout pour</span> chez vous",
+    "actualites": "Shop in Crans - Actualités"
+  },
+  "nav": {
+    "electricite": "Électricité",
+    "electromenager": "Électroménager",
+    "shopincrans": "Shop in Crans",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "navlinks": {
+    "electricite": "/electricite",
+    "electromenager": "/electromenager",
+    "shopincrans": "/shopincrans",
+    "services": "/services",
+    "contact": "/contact"
+  },
+  "idioma": "default"
+}
