@@ -3,10 +3,8 @@
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // quitamo el primero "/"
 
-import {
-  LanguageSelector,
-} from "astro-i18next/components";
-import { localizePath  } from "astro-i18next";
+// import {LanguageSelector} from "astro-i18next/components";
+// import { localizePath  } from "astro-i18next";
 import i18next, { t } from "i18next";
 let lang = i18next.language;
 
@@ -32,7 +30,7 @@ lang === "fr" ? lang = "" : lang = lang
     <li><a href={t("navlinks.contact")} class={pathname === t("navlinks.contact") ? "selected" : ""}>{t("nav.contact")}</a></li>
   </ul>
   <ul>
-<LanguageSelector></LanguageSelector>
+<!-- <LanguageSelector></LanguageSelector> -->
     <!-- <li><a href="/it">it</a></li>
     <li><a href="/en">en</a></li> -->
   </ul>

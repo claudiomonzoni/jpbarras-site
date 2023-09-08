@@ -23,7 +23,7 @@ export default function Shopcard({ idioma }) {
         break;
     }
     const response = await fetch(
-      `http://www.jpbarras.ch/admin/api/content/items/Offres?locale=${lang}`,
+      `https://www.jpbarras.ch/admin/api/content/items/Offres?locale=${lang}`,
       {
         method: "GET",
         headers: {

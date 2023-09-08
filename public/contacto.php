@@ -38,7 +38,7 @@ $sendmessage = wordwrap($sendmessage, 70);
 // Send mail by PHP Mail Function. esau@bezirk.mx 
 mail($desde, $subject, $sendmessage, $headers);
 // mail("esau@bezirk.mx", $subject, $sendmessage, $headers);
-echo "Merci " . $prenom . ", bientôt un conseiller vous contactera ";
+echo "Merci " . $prenom . ", pour votre demande. Notre équipe vous contactera dans les meilleurs délais. ";
 
 } else {
 echo "<span>* Email invalide *</span>";
