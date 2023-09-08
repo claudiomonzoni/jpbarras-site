@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import Shopcard from "../../components/Shopcard.jsx";
+// import Shopcards from "../../components/Shopcards.astro";
+import Bloque from "../../components/Bloque.astro";
+import i18next, { t, changeLanguage } from "i18next";
+
+changeLanguage("it");
+
+let lang = i18next.language;
+lang === "fr" ? lang = "" : lang = lang;
+---
+<Layout
+  title={t("site.title")}
+  description="J.P. Barras Electricité SA vous propose différents services dans le domaine de l’électricité comme de l’électroménager ainsi qu’un magasin, le Shop in Crans,"
+>
+  <Hero
+    encabezado={t("home.h1")}
+    parrafo="<b>J.P. Barras Electricité SA</b> vous propose différents <b>services</b> dans le domaine de <b>l’électricité comme de l’électroménager ainsi qu’un magasin, le Shop in Crans</b>, situé au cœur de la station dédié notamment à la quincaillerie et à <b>l’art de la table</b>."
+    imagenurl="/carrusel-home-jpbarras-1.webp"
+    home="true"
+  />
+
+  <div class="bandeja">
+    <h2>Shop in Crans - Actualités</h2>
+    
+  </div>
+  <div id="carrusel">
+    <Shopcard client:only idioma={lang} />
+  </div>
+  <!-- <Shopcards /> -->
+  <div class="bandeja zigzag">
+    <Bloque
+      imagen="/electricite-home-jpbarras.webp"
+      encabezado="Électricité"
+      parrafo="<b>Notre équipe vous accompagne</b> dans tous vos projets et besoins liés à l’électricité. "
+      liga={t("navlinks.electricite")}
+    />
+
+    <Bloque
+      imagen="/electromenager-link-section.webp"
+      encabezado="Électroménager"
+      parrafo="Nous vous conseillons dans le choix de vos appareils, <b>assurons la pose et l’entretien de votre électroménager.</b>  "
+      liga="/electromenager"
+    />
+
+    <Bloque
+      imagen="/shop-in-crans-home.webp"
+      encabezado="Shop in Crans"
+      parrafo="<b>Plus de 10'000 articles, un service de qualité et personnalisé</b>, voici ce que vous trouverez dans notre magasin de 600m2 Shop in Crans au centre de la station de Crans Montana.  "
+      liga="/shopincrans"
+    />
+
+    <Bloque
+      imagen="/services-jpbarras.webp"
+      encabezado="Service"
+      parrafo="Nous offrons également, dans notre magasin, un <b>service de gravure, de copie de clés minute</b> et de dépôt de gaz."
+      liga="/services"
+    />
+  </div>
+</Layout>
+
